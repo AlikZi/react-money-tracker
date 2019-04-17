@@ -4,6 +4,7 @@ import {
   startAddExpense,
   addExpense,
   editExpense,
+  startEditExpense,
   removeExpense,
   startRemoveExpense,
   setExpenses,
@@ -136,7 +137,7 @@ test("Should fetch the expenses from firebase", () => {
   });
 });
 
-test("Should remove the expense from firebase", (done) => {
+test("Should remove the expense from firebase", done => {
   const store = createMockStore({});
   const id = expenses[0].id;
   // Check if Remove Expense correctly dispatched in redux store
@@ -148,8 +149,41 @@ test("Should remove the expense from firebase", (done) => {
     });
   });
   // Check if expense is removed from the firebase
-  database.ref(`expense/${id}`).once('value').then((snapshot)=>{
-    expect(snapshot.val()).toEqual(null);
-    done();
-  })
+  database
+    .ref(`expenses/${id}`)
+    .once("value")
+    .then(snapshot => {
+      expect(snapshot.val()).toEqual(null);
+      done();
+    });
+});
+
+test("Should edit expense in firebase", done => {
+  const store = createMockStore({});
+  const id = expenses[1].id;
+  const updates = {
+    description: "some",
+    amount: 100,
+    note: "new",
+    createdAt: 5000
+  };
+  // Check if Edit Expense was called in redux store
+  store.dispatch(startEditExpense(id, updates)).then(() => {
+    const action = store.getActions()[0];
+    expect(action).toEqual({
+      type: "EDIT_EXPENSE",
+      id,
+      updates
+    });
+  });
+
+  // Check if expense is updated in fireabase
+  database
+      .ref(`expenses/${id}`)
+      .once('value')
+      .then((snapshot) => {
+        expect(snapshot.val()).toEqual(updates);
+        done();
+      })
+
 });

@@ -1,0 +1,36 @@
+.page-header{
+    background-color: $grey-light;
+
+    &__title{
+        margin: 0;
+        padding: $m-size 0;
+        font-weight: 100;
+        font-size: 3rem;
+    }
+}
+
+.form{
+    margin: $l-size 0;
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+
+    @media only screen and (max-width: $desktop-breakpoint) {
+        width: 100%;
+    }
+    
+
+    & > * {
+        margin-bottom: $s-size;
+    }
+
+    &__error {
+        margin: 0 0 $m-size 0;
+        font-style: italic;
+        color:#cc3300;
+    }
+
+    &__btn{
+        margin: 2rem 0 0 0;
+    }
+}

@@ -1,0 +1,49 @@
+.btn {
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  background-color: $color-primary;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 300;
+  line-height: 1.2;
+  transition: all .2s ease-out;
+
+  &--remove {
+    margin: -2rem 0 5rem 0;
+  }
+}
+
+.btn:hover {
+  background-color: darken($color-primary, 5%);
+}
+
+.btn:active {
+  background-color: darken($color-primary, 10%);
+}
+
+.btn--secondary {
+  background-color: darken($grey-light, 40%);
+
+  &:hover {
+    background-color: darken($grey-light, 45%);
+  }
+  
+  &:active {
+    background-color: darken($grey-light, 50%);
+  }
+
+}
+
+.link-btn {
+  border: none;
+  outline: none;
+  color: white;
+  background-color: transparent;
+  font-size: 1.6rem;
+  font-weight: 200;
+  padding: $s-size 0;
+}
+

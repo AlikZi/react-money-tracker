@@ -26,13 +26,18 @@ export class ExpenseListFilters extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="filters">
+      <div className="container">
+        <div className="filters__content">
         <input
+          className="input-text"
           type="text"
+          placeholder="Search Expenses"
           value={this.props.filters.text}
           onChange={this.onTextChange}
         />
         <select
+          className="input-select" 
           value={this.props.filters.sortBy}
           onChange={this.onSortChange}
         >
@@ -49,6 +54,8 @@ export class ExpenseListFilters extends React.Component {
           numberOfMonths={1}
           isOutsideRange={() => false}
         />
+        </div>
+        </div>
       </div>
     );
   }

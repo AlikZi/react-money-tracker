@@ -2,6 +2,19 @@
 
 exports[`should render EditExpensePage 1`] = `
 <div>
+  <div
+    className="page-header"
+  >
+    <div
+      className="container"
+    >
+      <h1
+        className="page-header__title"
+      >
+        Edit Expense
+      </h1>
+    </div>
+  </div>
   <ExpenseForm
     expense={
       Object {
@@ -14,10 +27,15 @@ exports[`should render EditExpensePage 1`] = `
     }
     onSubmit={[Function]}
   />
-  <button
-    onClick={[Function]}
+  <div
+    className="container"
   >
-    Remove
-  </button>
+    <button
+      className="btn btn--secondary btn--remove"
+      onClick={[Function]}
+    >
+      Remove Expense
+    </button>
+  </div>
 </div>
 `;

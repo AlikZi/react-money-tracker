@@ -1,0 +1,27 @@
+.list{
+    margin-bottom: 6rem;
+}
+
+.list-header {
+    background-color: $grey-light;
+    padding: $m-size $s-size;
+    border: 1px solid darken($grey-light, 10%);
+    color: $grey;
+    display: flex;
+    justify-content: space-between;
+
+    &__expenses {
+        display: none;
+    }
+
+    @media only screen and (max-width: 20rem){
+        &__expense, &__amount {
+            display: none;
+        }
+
+        &__expenses {
+            display: block;
+        }
+
+    }
+}

@@ -1,0 +1,25 @@
+.filters {
+    margin: $l-size 0;
+
+    &__content {
+        display: flex;
+
+        & > *:not(:last-child){
+            margin-right: $s-size;
+        }
+
+        @media only screen and (max-width: $desktop-breakpoint) {
+            flex-direction: column;
+            align-items: flex-start;
+
+
+            & > *:not(:last-child){
+                margin: 0 0 $s-size 0;
+            }
+
+        }
+        
+
+    }
+}
+

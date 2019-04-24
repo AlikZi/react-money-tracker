@@ -1,0 +1,21 @@
+.input-text {
+  padding: 1.5rem;
+  height: 5rem;
+  border-radius: 4px;
+  border: 1px solid #cacccd;
+  font-size: 1.8rem;
+  outline: none;
+}
+
+.input-select {
+  @extend .input-text;
+}
+
+.date-range {
+    border-radius: 4px;
+}
+
+.input-textarea {
+    @extend .input-text;
+    height: 10rem;
+}

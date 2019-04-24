@@ -1,0 +1,47 @@
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $s-size;
+    border: 1px solid darken($grey-light, 10%);
+    border-top: none;
+    text-decoration: none;
+    color: $grey-dark;
+    transition: all .25s ease-out;
+
+    @media only screen and (max-width: 20rem) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    &:hover {
+        background-color: darken($grey-light, 5%);
+    }
+
+    &--message {
+        color: $grey;
+        align-items: center;
+        justify-content: center;
+        font-style: italic;
+    }
+    &--message:hover {
+        background: none;
+    }
+
+    &__name{
+        word-break: break-all;
+        font-weight: 500;
+    }
+
+    &__date {
+        color: $grey;
+        font-size: 1.4rem;
+    }
+
+    &__amount {
+        font-weight: 500;
+    }
+
+
+
+}

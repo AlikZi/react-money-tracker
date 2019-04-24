@@ -1,0 +1,22 @@
+.summary {
+    background-color: $grey-light;
+
+    &__content {
+        padding: $l-size 0;
+
+        &-text {
+            font-weight: 300;
+            margin-bottom: $l-size;
+            line-height: 1;
+
+            span {
+                font-weight: 800;
+            }
+        }
+
+        &-btn {
+            font-size: 1.6rem;
+        }
+    }
+}
+
